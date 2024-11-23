@@ -47,12 +47,10 @@
         /* Buttons Styling */
         .top-buttons {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            width: 80%; /* Limit the width of the buttons */
-            max-width: 1000px;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            gap: 20px; /* Adds space between buttons */
+            margin: 20px 0; /* Adds space above and below the buttons */
         }
 
         .top-buttons .button {
@@ -66,8 +64,6 @@
             border-radius: 5px;
             transition: background-color 0.3s ease, transform 0.2s ease;
             cursor: pointer;
-            width: 45%;
-            text-align: center;
         }
 
         .top-buttons .button:hover {
@@ -144,7 +140,7 @@
     <img src="images/unnamed10.png" alt="mySQL Project" class="project-logo">
     <p>This project includes a MySQL Data Cleaning file and a Layoffs Excel file for data analysis and cleaning. My GitHub page for all of my projects is: <a href="https://github.com/nhuxhuynh" target="_blank">https://github.com/nhuxhuynh</a></p>
     
-    <div class="top-buttons">>
+    <div class="top-buttons">
     <a href="https://nhuxhuynh.github.io/nhuxhuynh-portfolio/" class="button">Go back to Portfolio</a>
     <a href="https://nhuxhuynh.github.io/MySQL-EDA-Project/" class="button" target="_blank">Go to Layoffs EDA Project</a>
     </div>
@@ -157,7 +153,7 @@
     </ul>
     </div>
 
-    <!-- Project Steps Section -->
+<!-- Project Steps Section -->
 <div class="project-steps">
     <h2>Project Steps</h2>
 
@@ -165,11 +161,13 @@
     <div class="step">
         <h3>The World Layoffs Data Cleaning Project Steps</h3>
         <p>
-           I first inserted my excel layoffs.csv and created a different table called "layoffs_staging" for the purpose of not corrupting the original raw data incase we still need it. I did this by inserting all data informations from my original laysoff to my layoffs_staging table. I took 4 steps to clean to my data, this include: 
-        <br> Step 1: Remove all the duplicates to reduce error and increase reliability and accuracy of the data. </br>
-        <br> Step 2: Standardizing the data which means I will check for the format and make sure it is consistent with the rest of the data. I removed or fixed any formatting that aren't uniform to encourage consistency and quality that is important for comparison when analyzing the data. </br>
-        <br> Step 3: Populate or remove any nulls or blanks value that are unneccessary and can cause bad data quality. This step is needed to increase data integrity.  </br>
-        <br> Step 4: Remove all unneccessary columns to reduce redundancy and efficiency for data anlysis.</br>
+            I first inserted my excel layoffs.csv and created a different table called "layoffs_staging" for the purpose of not corrupting the original raw data in case we still need it. I did this by inserting all data information from my original layoffs to my layoffs_staging table. I took 4 steps to clean my data, this included:
+        </p>
+        <p> 
+            Step 1: Remove all the duplicates to reduce error and increase reliability and accuracy of the data.<br>
+            Step 2: Standardizing the data which means I will check for the format and make sure it is consistent with the rest of the data. I removed or fixed any formatting that isn't uniform to encourage consistency and quality that is important for comparison when analyzing the data.<br>
+            Step 3: Populate or remove any nulls or blank values that are unnecessary and can cause bad data quality. This step is needed to increase data integrity.<br>
+            Step 4: Remove all unnecessary columns to reduce redundancy and increase efficiency for data analysis.
         </p>
         <img src="images/unnamed.png" alt="Intro" class="step-image">
     </div>
@@ -178,11 +176,11 @@
     <div class="step">
         <h3>Step 1: Remove Duplicates</h3>
         <p>
-            In this step, I checked for any duplicates by selecting the layoffs_staging table and looking at all the rows of each columns. I decided to create another table called "layoffs_staging2" from the "layoffs_staging" table to delete the duplicates and avoid redundancy processes. 
+            In this step, I checked for any duplicates by selecting the layoffs_staging table and looking at all the rows of each column. I decided to create another table called "layoffs_staging2" from the "layoffs_staging" table to delete the duplicates and avoid redundancy processes.
         </p>
         <img src="images/unnamed2.png" alt="Step 1" class="step-image">
         <p>
-        I used ROW_NUMBER() and made a new column named "row_num" as well as paritioning each column in my data to list the numbers of duplicates. For example, any row_num listed that is greater than (>) 1 gets removed. I checked to see if my code works by selecting "layoffs_staging" and a random company "Casper." It worked! There's only one result for Casper so no duplicates!
+            I used ROW_NUMBER() and made a new column named "row_num" as well as partitioning each column in my data to list the numbers of duplicates. For example, any row_num listed that is greater than (>) 1 gets removed. I checked to see if my code works by selecting "layoffs_staging" and a random company "Casper." It worked! There's only one result for Casper, so no duplicates!
         </p>
         <img src="images/unnamed3.png" alt="Step 1" class="step-image">
     </div>
@@ -191,41 +189,41 @@
     <div class="step">
         <h3>Step 2: Standardizing the Data</h3>
         <p>
-            In Step 2, I standardize the data that I previously saw were not uniformed and consistent. This part is important for data integrity and accuracy! I fixed the white space before each company name through TRIM(). I removed the typos such as the "%" after the "Crypto" industry and removed the "." at the end of "United States" country. Now this makes the data so much more reliable to use!
+            In Step 2, I standardized the data that I previously saw was not uniform and consistent. This part is important for data integrity and accuracy! I fixed the white space before each company name using TRIM(). I removed typos such as the "%" after the "Crypto" industry and the "." at the end of "United States." Now this makes the data so much more reliable to use!
         </p>
         <img src="images/unnamed4.png" alt="Step 2" class="step-image">
         <p>
-            I made sure to change the formatting of the date so it's uniformed to (mm/dd/yyyy).
+            I made sure to change the formatting of the date so it's uniform to (mm/dd/yyyy).
         </p>
         <img src="images/unnamed5.png" alt="Step 2" class="step-image">
     </div>
-</div>
 
-<div class="step">
-        <h3>Step 3: Null and Blank Values </h3>
+    <!-- Step 4 -->
+    <div class="step">
+        <h3>Step 3: Null and Blank Values</h3>
         <p>
-            For Step 3, I checked the columns where I noticed there were Null and Blank values. In the percentage_laid_off and total_laid_off, I didn't remove or populate the null values yet because null is an absence of value, the company didn't imply the # so it's unknown, I cannot populate a random number or remove it for the consistency of the data without introducing misinformation and alter results for decision-making. However, I did populate the Null and Blanks Value in the industry column. I did this by using the same existing Company's industry data and populate the same company that has their industry as Null or Blank. I made all Blank values into Null values before I populate all Nulls.   
+            For Step 3, I checked the columns where I noticed there were Null and Blank values. In the percentage_laid_off and total_laid_off, I didn't remove or populate the null values yet because null is an absence of value; the company didn't provide the #, so it's unknown. I cannot populate a random number or remove it for the consistency of the data without introducing misinformation and altering results for decision-making.
         </p>
         <img src="images/unnamed6.png" alt="Step 3" class="step-image">
         <p>
-            I populated the NULL with the correct matching industry, where company 1 and 2 matches each other. I also used the company "Airbnb" to check if my populating worked, and it did! Airbnb now shows that the industry is "Travel" (one of the Airbnb had NULL in their industry row in the beginning).
+            However, I did populate the Null and Blank values in the industry column. I did this by using the same existing company's industry data to populate the same company that has their industry as Null or Blank. I made all Blank values into Null values before populating all Nulls.
         </p>
         <img src="images/unnamed7.png" alt="Step 3" class="step-image">
- </div>
-    
+    </div>
+
+    <!-- Step 5 -->
     <div class="step">
-        <h3>Step 4: Remove Unneccessary Columns </h3>
+        <h3>Step 4: Remove Unnecessary Columns</h3>
         <p>
-            In Step 4, I removed the percentage_laid_off and total_laid_off columns because of the NULL values. I also remove the row_num column because it was no longer needed for the final result.
+            In Step 4, I removed the percentage_laid_off and total_laid_off columns because of the Null values. I also removed the row_num column because it was no longer needed for the final result.
         </p>
         <img src="images/unnamed8.png" alt="Step 4" class="step-image">
         <p>
-            This is a view of the final table of layoffs_staging2! The data can be downloaded above or through my github profile: mySQL and layoffs.csv. Thank you for viewing my World Layoffs Data Cleaning Project! :)
+            This is a view of the final table of layoffs_staging2! The data can be downloaded above or through my GitHub profile: mySQL and layoffs.csv. Thank you for viewing my World Layoffs Data Cleaning Project! :)
         </p>
         <img src="images/unnamed9.png" alt="Step 4" class="step-image">
- </div>
+    </div>
 </div>
-    
 </body>
 </html>
 
