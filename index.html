@@ -30,6 +30,29 @@
         a:hover {
             color: #2c5f2d;
             border-bottom-color: #2c5f2d;
+
+                /* Buttons Styling */
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between; /* Ensures buttons are on opposite sides */
+            align-items: center;
+            margin-bottom: 20px; /* Adds spacing between buttons and next section */
+        }
+        .navigation-buttons .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #49bf9d;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .navigation-buttons .button:hover {
+            background-color: #3ea584;
+        }
+            
         }
         .file-list {
             background-color: #e6ebe0; 
@@ -44,6 +67,12 @@
 <body>
     <h1>Welcome to My MySQL Data Cleaning World Layoffs Project!</h1>
     <p>This project includes a MySQL Data Cleaning file and a Layoffs Excel file for data analysis and cleaning. My GitHub page for all of my projects is: <a href="https://github.com/nhuxhuynh" target="_blank">https://github.com/nhuxhuynh</a></p>
+    
+    <div class="navigation-buttons">
+    <a href="https://nhuxhuynh.github.io/nhuxhuynh-portfolio/" class="button">Go back to Portfolio</a>
+    <a href="https://nhuxhuynh.github.io/MySQL-EDA-Project/" class="button" target="_blank">Go to Layoffs EDA Project</a>
+    </div>
+    
     <h2>View Files:</h2>
     <div class="file-list">
     <ul>
