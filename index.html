@@ -5,69 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MySQL Data Cleaning Project</title>
     <style>
+       /* General Styling */
         body {
-            background-color: #f4f1ea; 
-            color: #3e4e50;
+            background-color: #e0d7c4; /* Soft beige background for a natural feel */
+            color: #4f4b3e; /* Dark brown color for text */
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            text-align: center; /* Center text horizontally */
         }
+
         h1 {
-            color: #2c5f2d; 
-            font-size: 2em;
+            color: #3e2a47; /* Dark brownish purple color for the title */
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
+
         h2 {
-            color: #3e4e50;
+            color: #4f4b3e;
             font-size: 1.5em;
         }
+
         a {
-            color: #3d5a80; 
+            color: #6b4f3d; /* Warm brown color for links */
             text-decoration: none;
-            border-bottom: 1px solid #3d5a80;
+            border-bottom: 1px solid #6b4f3d;
             transition: color 0.3s ease, border-bottom-color 0.3s ease;
         }
+
         a:hover {
-            color: #2c5f2d;
-            border-bottom-color: #2c5f2d;
-            
+            color: #3e2a47;
+            border-bottom-color: #3e2a47;
+        }
+
         /* Buttons Styling */
         .top-buttons {
             display: flex;
-            justify-content: space-between; /* Space buttons apart */
+            justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px; /* Adds spacing below buttons */
+            margin-bottom: 20px;
         }
+
         .top-buttons .button {
             display: inline-block;
             padding: 10px 20px;
             font-size: 16px;
             font-weight: bold;
             color: #fff;
-            background-color: #49bf9d; /* Default button color */
+            background-color: #8e7a59; /* Muted brown button color */
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease, transform 0.2s ease;
             cursor: pointer;
         }
+
         .top-buttons .button:hover {
-            background-color: #3ea584; /* Hover color */
-            transform: scale(1.05); /* Slight zoom effect */
+            background-color: #6b5d42; /* Darker shade on hover */
+            transform: scale(1.05);
         }
-            
-        }
+
+        /* File List Styling */
         .file-list {
-            background-color: #e6ebe0; 
+            background-color: #f7e6d5; /* Light, warm beige background */
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             margin: 20px auto;
         }
+
+        /* Project Steps Section Styling */
+        .project-steps {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f5f1e3; /* Light cream background */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-steps h2 {
+            text-align: center;
+            color: #3e2a47;
+            margin-bottom: 20px;
+        }
+
+        .step {
+            margin-bottom: 30px;
+        }
+
+        .step h3 {
+            color: #4f4b3e;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #4f4b3e;
+            margin-bottom: 15px;
+        }
+
+        .step img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+        }
+
+        /* Project Logo Styling */
+        .project-logo {
+            display: block;
+            margin: 10px auto;
+            max-width: 100px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
     <h1>Welcome to My MySQL Data Cleaning World Layoffs Project!</h1>
+    <img src="images/unnamed10.png" alt="mySQL Project" class="project-logo">
     <p>This project includes a MySQL Data Cleaning file and a Layoffs Excel file for data analysis and cleaning. My GitHub page for all of my projects is: <a href="https://github.com/nhuxhuynh" target="_blank">https://github.com/nhuxhuynh</a></p>
     
     <div class="top-buttons">>
@@ -89,30 +155,67 @@
 
     <!-- Step 1 -->
     <div class="step">
-        <h3>The </h3>
+        <h3>The World Layoffs Data Cleaning Project Steps</h3>
         <p>
-            The first step involved importing the layoffs dataset into MySQL. I ensured the data was properly loaded without errors, using the appropriate file format and encoding.
+           I first inserted my excel layoffs.csv and created a different table called "layoffs_staging" for the purpose of not corrupting the original raw data incase we still need it. I did this by inserting all data informations from my original laysoff to my layoffs_staging table. I took 4 steps to clean to my data, this include: 
+        <br> Step 1: Remove all the duplicates to reduce error and increase reliability and accuracy of the data. </br>
+        <br> Step 2: Standardizing the data which means I will check for the format and make sure it is consistent with the rest of the data. I removed or fixed any formatting that aren't uniform to encourage consistency and quality that is important for comparison when analyzing the data. </br>
+        <br> Step 3: Populate or remove any nulls or blanks value that are unneccessary and can cause bad data quality. This step is needed to increase data integrity.  </br>
+        <br> Step 4: Remove all unneccessary columns to reduce redundancy and efficiency for data anlysis.</br>
         </p>
-        <img src="images/importing-data.png" alt="Step 1: Importing Data" class="step-image">
+        <img src="images/unnamed.png" alt="Intro" class="step-image">
     </div>
 
     <!-- Step 2 -->
     <div class="step">
-        <h3>Step 2: Data Cleaning</h3>
+        <h3>Step 1: Remove Duplicates</h3>
         <p>
-            In this step, I removed duplicates, standardized column formats, addressed null values, and removed unnecessary columns to prepare the data for analysis.
+            In this step, I checked for any duplicates by selecting the layoffs_staging table and looking at all the rows of each columns. I decided to create another table called "layoffs_staging2" from the "layoffs_staging" table to delete the duplicates and avoid redundancy processes. 
         </p>
-        <img src="images/data-cleaning.png" alt="Step 2: Data Cleaning" class="step-image">
+        <img src="images/unnamed2.png" alt="Step 1" class="step-image">
+        <p>
+        I used ROW_NUMBER() and made a new column named "row_num" as well as paritioning each column in my data to list the numbers of duplicates. For example, any row_num listed that is greater than (>) 1 gets removed. I checked to see if my code works by selecting "layoffs_staging" and a random company "Casper." It worked! There's only one result for Casper so no duplicates!
+        </p>
+        <img src="images/unnamed3.png" alt="Step 1" class="step-image">
     </div>
 
     <!-- Step 3 -->
     <div class="step">
-        <h3>Step 3: Exploratory Data Analysis</h3>
+        <h3>Step 2: Standardizing the Data</h3>
         <p>
-            I analyzed the cleaned data to identify trends, patterns, and insights into layoffs globally. Visualization tools were used to support the analysis.
+            In Step 2, I standardize the data that I previously saw were not uniformed and consistent. This part is important for data integrity and accuracy! I fixed the white space before each company name through TRIM(). I removed the typos such as the "%" after the "Crypto" industry and removed the "." at the end of "United States" country. Now this makes the data so much more reliable to use!
         </p>
-        <img src="images/eda-visualizations.png" alt="Step 3: Exploratory Data Analysis" class="step-image">
+        <img src="images/unnamed4.png" alt="Step 2" class="step-image">
+        <p>
+            I made sure to change the formatting of the date so it's uniformed to (mm/dd/yyyy).
+        </p>
+        <img src="images/unnamed5.png" alt="Step 2" class="step-image">
     </div>
+</div>
+
+<div class="step">
+        <h3>Step 3: Null and Blank Values </h3>
+        <p>
+            For Step 3, I checked the columns where I noticed there were Null and Blank values. In the percentage_laid_off and total_laid_off, I didn't remove or populate the null values yet because null is an absence of value, the company didn't imply the # so it's unknown, I cannot populate a random number or remove it for the consistency of the data without introducing misinformation and alter results for decision-making. However, I did populate the Null and Blanks Value in the industry column. I did this by using the same existing Company's industry data and populate the same company that has their industry as Null or Blank. I made all Blank values into Null values before I populate all Nulls.   
+        </p>
+        <img src="images/unnamed6.png" alt="Step 3" class="step-image">
+        <p>
+            I populated the NULL with the correct matching industry, where company 1 and 2 matches each other. I also used the company "Airbnb" to check if my populating worked, and it did! Airbnb now shows that the industry is "Travel" (one of the Airbnb had NULL in their industry row in the beginning).
+        </p>
+        <img src="images/unnamed7.png" alt="Step 3" class="step-image">
+ </div>
+    
+    <div class="step">
+        <h3>Step 4: Remove Unneccessary Columns </h3>
+        <p>
+            In Step 4, I removed the percentage_laid_off and total_laid_off columns because of the NULL values. I also remove the row_num column because it was no longer needed for the final result.
+        </p>
+        <img src="images/unnamed8.png" alt="Step 4" class="step-image">
+        <p>
+            This is a view of the final table of layoffs_staging2! The data can be downloaded above or through my github profile: mySQL and layoffs.csv. Thank you for viewing my World Layoffs Data Cleaning Project! :)
+        </p>
+        <img src="images/unnamed9.png" alt="Step 4" class="step-image">
+ </div>
 </div>
     
 </body>
