@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MySQL Data Cleaning Project</title>
     <style>
-       /* General Styling */
+        /* General Styling */
         body {
             background-color: #e0d7c4; /* Soft beige background for a natural feel */
             color: #4f4b3e; /* Dark brown color for text */
@@ -14,16 +14,17 @@
             padding: 0;
             line-height: 1.6;
             display: flex;
-            justify-content: center;
+            flex-direction: column; /* Stack content vertically */
+            justify-content: flex-start;
             align-items: center;
-            height: 100vh; /* Full viewport height */
-            text-align: center; /* Center text horizontally */
+            text-align: center;
+            min-height: 100vh;
         }
 
         h1 {
             color: #3e2a47; /* Dark brownish purple color for the title */
             font-size: 2.5em;
-            margin-bottom: 20px;
+            margin-top: 50px;
         }
 
         h2 {
@@ -48,6 +49,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 80%; /* Limit the width of the buttons */
+            max-width: 1000px;
+            margin-top: 20px;
             margin-bottom: 20px;
         }
 
@@ -62,6 +66,8 @@
             border-radius: 5px;
             transition: background-color 0.3s ease, transform 0.2s ease;
             cursor: pointer;
+            width: 45%;
+            text-align: center;
         }
 
         .top-buttons .button:hover {
@@ -86,6 +92,8 @@
             background-color: #f5f1e3; /* Light cream background */
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 80%; /* Limit width for project steps */
+            max-width: 1000px;
         }
 
         .project-steps h2 {
@@ -123,8 +131,8 @@
         /* Project Logo Styling */
         .project-logo {
             display: block;
-            margin: 10px auto;
-            max-width: 100px;
+            margin: 20px auto;
+            max-width: 150px;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
